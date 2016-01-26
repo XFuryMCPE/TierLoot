@@ -21,142 +21,56 @@ class Main extends P implements L{
 	}
 
 	public function onBreak(BBL $e){
-		$p = $e->getPlayer();
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t1-chance")) == "1"){
-			if($p->getGamemode() == "1"){
-				if($this->getConfig()->get("find-in-cmode") == "false"){
-				}
-				else{
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addSound(new Pop($p->getLocation()));
-					$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::DARK_RED."Tier 1".TextFormat::RESET.TextFormat::AQUA." loot underground!");
-					foreach($this->getConfig()->get("t1-loot") as $loot){
-						$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t1-item-max"))));
-					}
-				}
+			$p = $e->getPlayer();
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addSound(new Pop($p->getLocation()));
+			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::RED."Tier 1".TextFormat::RESET.TextFormat::AQUA." loot underground!");
+			foreach($this->getConfig()->get("t1-loot") as $loot){
+					$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t1-item-max"))));
 			}
 		}
 		else{
 		}
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t2-chance")) == "1"){
-			if($p->getGamemode() == "1"){
-				if($this->getConfig()->get("find-in-cmode") == "false"){
-				}
-				else{
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addSound(new Pop($p->getLocation()));
-					$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::RED."Tier 2".TextFormat::RESET.TextFormat::AQUA." loot underground!");
-					foreach($this->getConfig()->get("t2-loot") as $loot){
-						$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t2-item-max"))));
-					}
-				}
+			$p = $e->getPlayer();
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addSound(new Pop($p->getLocation()));
+			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::GOLD."Tier 2".TextFormat::RESET.TextFormat::AQUA." loot underground!");
+			foreach($this->getConfig()->get("t2-loot") as $loot){
+					$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t2-item-max"))));
 			}
 		}
 		else{
 		}
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t3-chance")) == "1"){
-			if($p->getGamemode() == "1"){
-				if($this->getConfig()->get("find-in-cmode") == "false"){
-				}
-				else{
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addSound(new Pop($p->getLocation()));
-					$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::GOLD."Tier 3".TextFormat::RESET.TextFormat::AQUA." loot underground!");
-					foreach($this->getConfig()->get("t3-loot") as $loot){
-						$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t3-item-max"))));
-					}
-				}
-			}
-		}
-		else{
-		}
-		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t4-chance")) == "1"){
-			if($p->getGamemode() == "1"){
-				if($this->getConfig()->get("find-in-cmode") == "false"){
-				}
-				else{
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addSound(new Pop($p->getLocation()));
-					$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::YELLOW."Tier 4".TextFormat::RESET.TextFormat::AQUA." loot underground!");
-					foreach($this->getConfig()->get("t4-loot") as $loot){
-						$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t4-item-max"))));
-					}
-				}
-			}
-		}
-		else{
-		}
-		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t5-chance")) == "1"){
-			if($p->getGamemode() == "1"){
-				if($this->getConfig()->get("find-in-cmode") == "false"){
-				}
-				else{
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
-					$p->getLevel()->addSound(new Pop($p->getLocation()));
-					$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::WHITE."Tier 5".TextFormat::RESET.TextFormat::AQUA." loot underground!");
-					foreach($this->getConfig()->get("t5-loot") as $loot){
-						$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t5-item-max"))));
-					}
-				}
+			$p = $e->getPlayer();
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addParticle(new Lava($e->getBlock(), 2));
+			$p->getLevel()->addSound(new Pop($p->getLocation()));
+			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::YELLOW."Tier 3".TextFormat::RESET.TextFormat::AQUA." loot underground!");
+			foreach($this->getConfig()->get("t3-loot") as $loot){
+				$p->getInventory()->addItem(Item::get($loot,0,mt_rand(0,$this->getConfig()->get("t3-item-max"))));
 			}
 		}
 		else{
