@@ -19,10 +19,11 @@ class Main extends PluginBase implements Listener{
 	}
 
 	public function onBreak(BlockBreakEvent $e){
+		$p = $e->getPlayer();
+		$b = $e->getBlock();
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t1-chance")) == "1"){
-			$p = $e->getPlayer();
 			for($i = 0; $i <= 5; $i++){
-				$p->getLevel()->addParticle(new LavaParticle($e->getBlock(), 2));
+				$p->getLevel()->addParticle(new LavaParticle($b, 2));
 			}
 			$p->getLevel()->addSound(new PopSound($p));
 			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::RED."Tier 1".TextFormat::RESET.TextFormat::AQUA." loot underground!");
@@ -31,9 +32,8 @@ class Main extends PluginBase implements Listener{
 			}
 		}
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t2-chance")) == "1"){
-			$p = $e->getPlayer();
 			for($i = 0; $i <= 8; $i++){
-				$p->getLevel()->addParticle(new LavaParticle($e->getBlock(), 2));
+				$p->getLevel()->addParticle(new LavaParticle($b, 2));
 			}
 			$p->getLevel()->addSound(new PopSound($p));
 			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::GOLD."Tier 2".TextFormat::RESET.TextFormat::AQUA." loot underground!");
@@ -42,9 +42,8 @@ class Main extends PluginBase implements Listener{
 			}
 		}
 		if($e->getBlock()->getId() == 1 && mt_rand(0,$this->getConfig()->get("t3-chance")) == "1"){
-			$p = $e->getPlayer();
 			for($i = 0; $i <= 11; $i++){
-				$p->getLevel()->addParticle(new LavaParticle($e->getBlock(), 2));
+				$p->getLevel()->addParticle(new LavaParticle($b, 2));
 			}
 			$p->getLevel()->addSound(new PopSound($p));
 			$this->getServer()->broadcastMessage(TextFormat::LIGHT_PURPLE.TextFormat::BOLD."<TL> ".TextFormat::RESET.TextFormat::GREEN.$p->getName().TextFormat::AQUA." found ".TextFormat::BOLD.TextFormat::YELLOW."Tier 3".TextFormat::RESET.TextFormat::AQUA." loot underground!");
